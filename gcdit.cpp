@@ -25,11 +25,17 @@ T gcdrec(T a, T b) {
     return gcd(b, a % b);
 }
 
+template <class T>
+T lcm(T a, T b) {
+    return a / gcd(a, b) * b;
+}
+
 int main() {
     int a, b;
     cin >> a >> b;
     cout << gcd(a, b) << endl
          << gcdxor(a, b) << endl
-         << gcdrec(a, b) << endl;
+         << gcdrec(a, b) << endl
+         << lcm(a, b) << endl;
     return 0;
 }
